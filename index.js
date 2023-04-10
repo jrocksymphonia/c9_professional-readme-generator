@@ -14,7 +14,8 @@ const questions = [];
 // THEN this is displayed as the title of the README
 
 // WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-// THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
+// THEN this information is added to the sections of the README 
+// entitled Description, Installation, Usage, Contributing, and Tests
 
 // WHEN I choose a license for my application from a list of options
 // THEN a badge for that license is added near the top of the README 
@@ -44,27 +45,32 @@ inquirer
     {
       type: 'input',
       name: 'Description',
-      message: 'Where are you from?',
+      message: 'Add a description to your Repository:',
+    },
+    {
+      type: 'confirm',
+      name: 'Table of Contents',
+      message: 'Would you like a table of contents?',
     },
     {
       type: 'input',
       name: 'Table of Contents',
-      message: 'What is your favorite hobby?',
+      message: '',
     },
     {
       type: 'input',
       name: 'Installation',
-      message: 'What is your favorite food?',
+      message: 'What are the steps required to install your project?',
     },
     {
       type: 'input',
       name: 'Usage',
-      message: 'Enter your GitHub Username',
+      message: 'Provide instructions and examples for use. Include screenshots as needed.',
     },
     {
       type: 'input',
       name: 'License',
-      message: 'Enter your LinkedIn URL.',
+      message: 'What license would you like to choose?',
     },
     {
         type: 'input',
@@ -86,7 +92,7 @@ inquirer
     const htmlPageContent = generateREADME(answers);
 
     fs.writeFile('readme.md', htmlPageContent, (err) =>
-      err ? console.log(err) : console.log('Successfully created index.html!')
+      err ? console.log(err) : console.log('Successfully created readme.md!')
     );
   });
 
