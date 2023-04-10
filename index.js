@@ -21,6 +21,8 @@ const questions = [];
 // and a notice is added to the section of the README entitled License 
 // that explains which license the application is covered under
 
+
+//--------------Questions section---------
 // WHEN I enter my GitHub username
 // THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
 
@@ -28,6 +30,7 @@ const questions = [];
 // THEN this is added to the section of the README entitled Questions, 
 // with instructions on how to reach me with additional questions
 
+//-------------Table of Contents----------
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
 
@@ -88,7 +91,45 @@ inquirer
   });
 
 // TODO: Create a function to write README file
-const generateREADME = (fileName, data) =>
+const generateREADME = (fileName, data) => 
+`# <Your-Project-Title>
+
+## Description
+
+
+
+## Table of Contents (Optional)
+
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+
+## Installation
+
+
+
+## Usage
+
+
+
+## Credits
+
+
+
+## License
+
+
+
+## How to Contribute
+
+
+
+## Tests
+
+
+
+`;
 
 // TODO: Create a function to initialize app
 function init() {}
