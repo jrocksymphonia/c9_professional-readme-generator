@@ -1,7 +1,18 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const fs = require('fs');
-const { title } = require('process');
+const { writeFile } = require('fs').promises;
+
+
+var licenseChoice = [
+  "Apache v2", 
+  "GNU GPLv3", 
+  "MIT", 
+  "BSD 2-Clause", 
+  "BSD 3-Clause", 
+  "Boost v1",
+  "Creative Commons Zero v1",
+  "Eclipse",
+]
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -13,7 +24,7 @@ const questions = [
 {
   type: 'input',
   name: 'description',
-  message: 'Add a description to your Repository:',
+  message: 'Add a description to your repository:',
 },
 {
   type: 'confirm',
@@ -36,9 +47,10 @@ const questions = [
   message: 'Provide instructions and examples for use. Include screenshots as needed.',
 },
 {
-  type: 'input',
+  type: 'list',
   name: 'license',
   message: 'What license would you like to choose?',
+  choices: licenseChoice,
 },
 {
   type: 'input',
@@ -52,7 +64,7 @@ const questions = [
 },
 {
   type: 'input',
-  name: 'Questions',
+  name: 'questions',
   message: 'Enter your LinkedIn URL.',
 }];
 
@@ -86,26 +98,17 @@ const questions = [
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
 
-inquirer
-  .prompt(questions)
-  .then((answers) => {
-    console.log(answers);
-    const readmePageContent = generateREADME(answers);
 
-    fs.writeFile('readme.md', readmePageContent, (err) =>
-      err ? console.log(err) : console.log('Successfully created readme.md!')
-    );
-  });
 
 // TODO: Create a function to write README file
-const generateREADME = (fileName, data) => 
+const generateREADME = ({title, description, installation, usage, license}) => 
 `# ${title}
 
 ## Description
 
 ${description}
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [](#)
 - [](#)
@@ -138,15 +141,19 @@ ${license}
 
 `;
 
+const promptUser = () => {
+return inquirer.prompt(questions);
+}
+
 // TODO: Create a function to initialize app
 function init() {
   promptUser()
     // Use writeFile method imported from fs.promises to use promises instead of
     // a callback function
-    .then((answers) => writeFile('readme.md', generateHTML(answers)))
+    .then((answers) => writeFile('readme.md', generateREADME(answers)))
     .then(() => console.log('Successfully wrote to readme.md'))
     .catch((err) => console.error(err));
 }
 
 // Function call to initialize app
-// init();
+init();
