@@ -1,10 +1,10 @@
-# [object Object]
+# Code Girl
 
 ## Description
 
-undefined
+trynna make a readme file
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [](#)
 - [](#)
@@ -13,11 +13,11 @@ undefined
 
 ## Installation
 
-undefined
+N/N
 
 ## Usage
 
-undefined
+n/a
 
 ## Credits
 
@@ -25,7 +25,7 @@ undefined
 
 ## License
 
-undefined
+MIT
 
 ## How to Contribute
 

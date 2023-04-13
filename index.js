@@ -7,11 +7,6 @@ var licenseChoice = [
   "Apache v2", 
   "GNU GPLv3", 
   "MIT", 
-  "BSD 2-Clause", 
-  "BSD 3-Clause", 
-  "Boost v1",
-  "Creative Commons Zero v1",
-  "Eclipse",
 ]
 
 // TODO: Create an array of questions for user input
