@@ -11,57 +11,58 @@ var licenseChoice = [
 
 // TODO: Create an array of questions for user input
 const questions = [
-{
-  type: 'input',
-  name: 'title',
-  message: 'What is the title of your repository?',
-},
-{
-  type: 'input',
-  name: 'description',
-  message: 'Add a description to your repository:',
-},
-{
-  type: 'confirm',
-  name: 'table of contents',
-  message: 'Would you like a table of contents?',
-},
-{
-  type: 'input',
-  name: 'Table of Contents',
-  message: '',
-},
-{
-  type: 'input',
-  name: 'installation',
-  message: 'What are the steps required to install your project?',
-},
-{
-  type: 'input',
-  name: 'usage',
-  message: 'Provide instructions and examples for use. Include screenshots as needed.',
-},
-{
-  type: 'list',
-  name: 'license',
-  message: 'What license would you like to choose?',
-  choices: licenseChoice,
-},
-{
-  type: 'input',
-  name: 'contributing',
-  message: 'Enter your LinkedIn URL.',
-},
-{
-  type: 'input',
-  name: 'tests',
-  message: 'Enter your LinkedIn URL.',
-},
-{
-  type: 'input',
-  name: 'questions',
-  message: 'Enter your LinkedIn URL.',
-}];
+  {
+    type: 'input',
+    name: 'title',
+    message: 'What is the title of your repository?',
+  },
+  {
+    type: 'input',
+    name: 'description',
+    message: 'Add a description to your repository:',
+  },
+  {
+    type: 'confirm',
+    name: 'table of contents',
+    message: 'Would you like a table of contents?',
+  },
+  {
+    type: 'input',
+    name: 'Table of Contents',
+    message: '',
+  },
+  {
+    type: 'input',
+    name: 'installation',
+    message: 'What are the steps required to install your project?',
+  },
+  {
+    type: 'input',
+    name: 'usage',
+    message: 'Provide instructions and examples for use. Include screenshots as needed.',
+  },
+  {
+    type: 'list',
+    name: 'license',
+    message: 'What license would you like to choose?',
+    choices: licenseChoice,
+  },
+  {
+    type: 'input',
+    name: 'contributing',
+    message: 'Enter your LinkedIn URL.',
+  },
+  {
+    type: 'input',
+    name: 'tests',
+    message: 'Enter your LinkedIn URL.',
+  },
+  {
+    type: 'input',
+    name: 'questions',
+    message: 'Enter your LinkedIn URL.',
+  }
+];
 
 // WHEN I am prompted for information about my application repository
 // THEN a high-quality, professional README.md is generated 
